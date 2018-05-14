@@ -11,7 +11,7 @@
   lineinfile:
     dest: '{{ENV_FILE}}'
     insertafter: '{{item.position}}'
-    line: {{item.value}}
+    line: '{{item.value}}'
     state: present
   with_items:
     - {position: EOF, value: "\n"}
