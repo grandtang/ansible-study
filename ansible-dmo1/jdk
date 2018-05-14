@@ -1,0 +1,6 @@
+[node1]
+192.168.140.132
+
+[jdk_server:children]
+node1
+

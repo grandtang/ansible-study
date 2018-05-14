@@ -1,0 +1,3 @@
+- include: jdksetup.yml
+  tags:
+    - jdksetup

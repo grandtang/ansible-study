@@ -1,0 +1,6 @@
+- hosts: jdk_server
+  remote_user: ansible
+  sudo: yes
+  
+  roles:
+     - jdk
