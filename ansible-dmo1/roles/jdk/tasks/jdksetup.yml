@@ -5,17 +5,17 @@
 
 
 - name: create jvm_env file
-  file: path='{{ENV_FILE}}' state=file mode=0755
+  file: path='{{ENV_FILE}}' mode=0755
 
 - name: set_up JDK ENV
   lineinfile:
     dest: '{{ENV_FILE}}'
-    insertafter: 
-    line:
+    insertafter: '{{item.position}}'
+    line: {{item.value}}
     state: present
   with_items:
     - {position: EOF, value: "\n"}
-    - {position: EOF, value: "export JAVA_HOME='{{JDK_SETUP_DIRECTORY}}/{{JDK_VERSION}}'"}
+    - {position: EOF, value: "export JAVA_HOME={{JDK_SETUP_DIRECTORY}}/{{JDK_VERSION}}"}
     - {position: EOF, value: "export PATH=$PATH:JAVA_HOME/bin"}
 
 - name: soure '{{ENV_FILE_PARENT}}'
