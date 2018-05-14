@@ -1,4 +1,4 @@
 192.168.140.132
 
-[test:vars]
+[all:vars]
 abc=A B C
