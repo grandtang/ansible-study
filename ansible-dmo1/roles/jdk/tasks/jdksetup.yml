@@ -1,3 +1,12 @@
+- name: copy clear.sh
+  copy: src='clear.sh.j2' dest='{{JDK_SETUP_DIRECTORY}}/clear.sh' owner=root group=root mode=0755
+
+- name: execute clear.sh
+  command: . '{{JDK_SETUP_DIRECTORY}}'/clear.sh
+
+- name: delete clear.sh
+  command: rm -rf '{{JDK_SETUP_DIRECTORY}}'/clear.sh
+
 - name: mkdir directory
   file: path='{{JDK_SETUP_DIRECTORY}}' state=directory mode=0755  owner=root group=root
 - name: copy & unzip '{{JDK_TAR_PATH}}'

@@ -1,0 +1,6 @@
+#/bin/bash
+
+for i in `rpm -qa | grep java`
+do
+	rpm -e --nodeps $i
+done

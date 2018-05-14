@@ -1,6 +1,9 @@
-[node1]
-192.168.140.132
-
+[master]
+master
+[slaves]
+slave-0[1:2]
 [jdk_server:children]
-node1
+master
+slaves
+
 
