@@ -1,4 +1,4 @@
 - name: mkdir directory
   file: path='{{JDK_SETUP_DIRECTORY}}' state=directory mode=0755
 - name: copy & unzip '{{JDK_TAR_PATH}}'
-  unarchive: src='{{JDK_TAR_PATH}}' dist='{{JDK_SETUP_DIRECTORY}}'
+  unarchive: src='{{JDK_TAR_PATH}}' dest='{{JDK_SETUP_DIRECTORY}}'
