@@ -2,3 +2,5 @@
   copy:
     dest: '/home/ansible/'
     src: abc
+-name: echo
+ shell: echo 'abc' >> abc
