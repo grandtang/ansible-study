@@ -1,9 +1,9 @@
 - hosts: jdk_server
   remote_user: ansible
-  # become: yes
-  # become_user: root
-  # become_method: sudo
-  sudo: true
-  sudo_user: ansible
+  become: yes
+  become_user: root
+  become_method: sudo
+  # sudo: true
+  # sudo_user: ansible
   roles:
      - jdk
