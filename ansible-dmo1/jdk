@@ -1,9 +1,9 @@
-[master]
+[master_server]
 master
-[slaves]
+[slaves_server]
 slave-0[1:2]
 [jdk_server:children]
-master
-slaves
+master_server
+slaves_server
 
 

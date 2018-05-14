@@ -11,7 +11,7 @@
   become_method: sudo
 
 - name: delete clear.sh
-  command: rm -rf '{{JDK_SETUP_DIRECTORY}}'/clear.sh
+  file: path='{{JDK_SETUP_DIRECTORY}}'/clear.sh state=absent
 
 - name: copy & unzip '{{JDK_TAR_PATH}}'
   unarchive: src='{{JDK_TAR_PATH}}' dest='{{JDK_SETUP_DIRECTORY}}' owner=root group=root
