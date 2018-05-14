@@ -4,8 +4,8 @@
 #   unarchive: src='{{JDK_TAR_PATH}}' dest='{{JDK_SETUP_DIRECTORY}}'
 
 
- - name: set_up JDK ENV
-   copy: src=jvm.sh.j2 dest='{{ENV_FILE_DIR}}' owner=root group=root mode=0755
+- name: set_up JDK ENV
+  copy: src=jvm.sh.j2 dest='{{ENV_FILE_DIR}}' owner=root group=root mode=0755
 
 - name: soure '{{ENV_FILE}}'
   shell: source '{{ENV_FILE}}'
