@@ -1,5 +1,5 @@
 - hosts: jdk_server
-  remote_user: ansible
+  remote_user: hadoop
   become: yes
   become_user: root
   become_method: sudo
