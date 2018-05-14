@@ -1,2 +1,4 @@
-- name: Create GitLog Hive Model
-  shell: echo 'abc'>/home/ansible/demo
+- name: copy
+  copy:
+    dest: '/home/ansible/'
+    src: abc
