@@ -5,7 +5,10 @@
   copy: src='clear.sh.j2' dest='{{JDK_SETUP_DIRECTORY}}/clear.sh' owner=root group=root mode=0755
 
 - name: execute clear.sh
-  command: sudo . '{{JDK_SETUP_DIRECTORY}}'/clear.sh
+  command:  . '{{JDK_SETUP_DIRECTORY}}'/clear.sh
+  become: yes
+  become_user: root
+  become_method: sudo
 
 - name: delete clear.sh
   command: rm -rf '{{JDK_SETUP_DIRECTORY}}'/clear.sh
