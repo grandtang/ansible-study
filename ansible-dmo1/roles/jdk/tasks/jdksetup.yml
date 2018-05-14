@@ -5,7 +5,7 @@
 
 
 - name: create jvm_env file
-  file: path='{{ENV_FILE}}' mode=0755
+  file: path='{{ENV_FILE}}' mode=0755 owner=root  group=root
 
 # - name: set_up JDK ENV
 #   lineinfile:
