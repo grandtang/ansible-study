@@ -1,0 +1,14 @@
+- name: mkdir '{{zookeeper_install_path}}'
+  file: path='{{zookeeper_install_path}}' state=directory mode=0755  owner=hadoop group=hadoop
+
+- name: mkdir '{{zookeeper_datadir}}'
+  file: path='{{zookeeper_datadir}}' state=directory mode=0755  owner=hadoop group=hadoop
+
+- name: unarchive hadoop
+  unarchive: src='{{zookeeper_package_path}}' dest='{{zookeeper_install_path}}' owner=hadoop group=hadoop
+
+- name: copy zoo.cfg
+  copy: path=zoo.cfg.j2 dest='{{zookeeper_confdir}}/zoo.cfg'  owner=hadoop group=hadoop
+
+- name: copy myid
+  copy: path=zoo.cfg.j2 dest='{{zookeeper_confdir}}/zoo.cfg'  owner=hadoop group=hadoop

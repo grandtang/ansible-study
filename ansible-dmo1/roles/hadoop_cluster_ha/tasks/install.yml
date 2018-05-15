@@ -1,0 +1,43 @@
+- name: closed fire-wall
+  command: systemctl stop firewalld
+  become: yes
+  become_user: root
+  become_method: sudo
+
+
+- name: mkdir directory
+  file: path='{{hadoop_install_path}}' state=directory mode=0755  owner=hadoop group=hadoop
+
+- name: mkdir directory
+  file: path='{{hadoop_tmp_dir}}' state=directory mode=0755  owner=hadoop group=hadoop
+
+- name: mkdir directory
+  file: path='{{dfs_namenode_name_dir}}' state=directory mode=0755  owner=hadoop group=hadoop
+
+- name: mkdir directory
+  file: path='{{dfs_datanode_data_dir}}' state=directory mode=0755  owner=hadoop group=hadoop
+
+- name: unarchive hadoop
+  unarchive: src='{{hadoop_gz_path}}' dest='{{hadoop_install_path}}' owner=hadoop group=hadoop
+
+- name: copy etc
+  template: src=core-site.xml.j2 dest='{{HADOOP_CONFIG_HOME}}/core-site.xml'  owner=hadoop group=hadoop
+- name: copy etc
+  template: src=hadoop-env.sh.j2 dest='{{HADOOP_CONFIG_HOME}}/hadoop-env.sh'  owner=hadoop group=hadoop
+- name: copy etc
+  template: src=hdfs-site.xml.j2 dest='{{HADOOP_CONFIG_HOME}}/hdfs-site.xml'  owner=hadoop group=hadoop
+- name: copy etc
+  template: src=mapred-site.xml.j2 dest='{{HADOOP_CONFIG_HOME}}/mapred-site.xml'  owner=hadoop group=hadoop
+- name: copy etc
+  template: src=yarn-site.xml.j2 dest='{{HADOOP_CONFIG_HOME}}/yarn-site.xml'  owner=hadoop group=hadoop
+- name: copy etc
+  template: src=slaves.j2 dest='{{HADOOP_CONFIG_HOME}}/slaves'  owner=hadoop group=hadoop
+
+- name: set_up JDK ENV
+  template: src=hadoop.sh.j2 dest='{{ENV_FILE_DIR}}/hadoop.sh' owner=root group=root mode=0755
+  become: yes
+  become_user: root
+  become_method: sudo
+
+- name: soure '{{ENV_FILE}}'
+  shell: source '{{ENV_FILE}}'

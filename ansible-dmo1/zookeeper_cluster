@@ -1,0 +1,4 @@
+[zookeeper_cluster]
+slave-01 myid=1 server_01=slave-01
+slave-02 myid=2 server_02=slave-02
+slave-03 myid=3 server_03=slave-03
