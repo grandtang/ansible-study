@@ -1,0 +1,7 @@
+- hosts: master_server
+  remote_user: hadoop
+  tasks:
+    - name: start hdfs
+      command: start-dfs.sh
+    - name: start yarn
+      command: start-yarn.sh

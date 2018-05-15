@@ -4,36 +4,41 @@
   become_user: root
   become_method: sudo
 
+- name: delete directory {{hadoop_install_path}}
+  file: path='{{hadoop_install_path}}' state=absent
 
-- name: mkdir directory
+- name: mkdir directory {{hadoop_install_path}}
   file: path='{{hadoop_install_path}}' state=directory mode=0755  owner=hadoop group=hadoop
 
-- name: mkdir directory
+- name: mkdir directory {{hadoop_tmp_dir}}
   file: path='{{hadoop_tmp_dir}}' state=directory mode=0755  owner=hadoop group=hadoop
 
-- name: mkdir directory
+- name: mkdir directory {{dfs_namenode_name_dir}}
   file: path='{{dfs_namenode_name_dir}}' state=directory mode=0755  owner=hadoop group=hadoop
 
-- name: mkdir directory
+- name: mkdir directory {{dfs_datanode_data_dir}}
   file: path='{{dfs_datanode_data_dir}}' state=directory mode=0755  owner=hadoop group=hadoop
 
-- name: unarchive hadoop
+- name: mkdir directory {{dfs_jdata_dir}}
+  file: path='{{dfs_jdata_dir}}' state=directory mode=0755  owner=hadoop group=hadoop
+
+- name: unarchive hadoop {{hadoop_gz_path}}
   unarchive: src='{{hadoop_gz_path}}' dest='{{hadoop_install_path}}' owner=hadoop group=hadoop
 
-- name: copy etc
+- name: copy etc core-site.xml
   template: src=core-site.xml.j2 dest='{{HADOOP_CONFIG_HOME}}/core-site.xml'  owner=hadoop group=hadoop
-- name: copy etc
+- name: copy etc hadoop-env.sh
   template: src=hadoop-env.sh.j2 dest='{{HADOOP_CONFIG_HOME}}/hadoop-env.sh'  owner=hadoop group=hadoop
-- name: copy etc
+- name: copy etc hdfs-site.xml
   template: src=hdfs-site.xml.j2 dest='{{HADOOP_CONFIG_HOME}}/hdfs-site.xml'  owner=hadoop group=hadoop
-- name: copy etc
+- name: copy etc mapred-site.xml
   template: src=mapred-site.xml.j2 dest='{{HADOOP_CONFIG_HOME}}/mapred-site.xml'  owner=hadoop group=hadoop
-- name: copy etc
+- name: copy etc yarn-site.xml
   template: src=yarn-site.xml.j2 dest='{{HADOOP_CONFIG_HOME}}/yarn-site.xml'  owner=hadoop group=hadoop
-- name: copy etc
+- name: copy etc slaves
   template: src=slaves.j2 dest='{{HADOOP_CONFIG_HOME}}/slaves'  owner=hadoop group=hadoop
 
-- name: set_up JDK ENV
+- name: set_up hadoop ENV '{{ENV_FILE_DIR}}/hadoop.sh'
   template: src=hadoop.sh.j2 dest='{{ENV_FILE_DIR}}/hadoop.sh' owner=root group=root mode=0755
   become: yes
   become_user: root

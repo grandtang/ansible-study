@@ -4,9 +4,9 @@
     - install
 
 # hadoop_cluster startup
-- include: startup.yml
+- include: start_jd.yml
   tags:
-    - startup
+    - start_jd
 
 # hadoop_cluster stop
 - include: stop.yml

@@ -1,0 +1,5 @@
+- hosts: JournalNode_server
+  remote_user: hadoop
+  tasks:
+    - name: start JournalNode
+      command: hadoop-daemon.sh start journalnode

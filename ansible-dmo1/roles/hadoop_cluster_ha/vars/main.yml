@@ -5,8 +5,11 @@ hadoop_tmp_dir: '{{hadoop_install_path}}/tmp'
 dfs_namenode_name_dir: '{{hadoop_install_path}}/matedata/name'
 dfs_replication: 2
 dfs_datanode_data_dir: '{{hadoop_install_path}}/matedata/data'
+dfs_jdata_dir: '{{hadoop_install_path}}/matedata/jdata'
 HADOOP_HOME: '{{hadoop_install_path}}/hadoop-2.9.1'
 HADOOP_CONFIG_HOME: '{{HADOOP_HOME}}/etc/hadoop'
+
+user_home: /home/hadoop
 
 ENV_FILE_DIR: /etc/profile.d/
 ENV_FILE: /etc/profile

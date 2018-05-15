@@ -1,0 +1,7 @@
+- hosts: master_server
+  remote_user: hadoop
+  tasks:
+    - name: format hdfs
+      command: hdfs namenode -format
+    - name: format zkfc
+      command: hdfs zkfc -formatZK
