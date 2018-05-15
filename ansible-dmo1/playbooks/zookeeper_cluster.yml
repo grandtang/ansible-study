@@ -1,4 +1,4 @@
-- hosts: hadoop_cluster
+- hosts: zookeeper_cluster
   remote_user: hadoop
   roles:
-     - hadoop_cluster
+     - zookeeper_cluster
