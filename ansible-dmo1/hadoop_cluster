@@ -4,6 +4,7 @@ master
 slave-0[1:2]
 [hadoop_cluster:children]
 master_server
+slaves_server
 
 [hadoop_cluster:vars]
 slave_01=slave-01
