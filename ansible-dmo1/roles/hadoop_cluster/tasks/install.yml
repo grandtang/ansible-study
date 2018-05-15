@@ -31,4 +31,4 @@
 - name: copy etc
   template: src=yarn-site.xml.j2 dest='{{HADOOP_CONFIG_HOME}}/yarn-site.xml'  owner=hadoop group=hadoop
 - name: copy etc
-  template: slaves.j2 dest='{{HADOOP_CONFIG_HOME}}/slaves-site.xml'  owner=hadoop group=hadoop
+  template: src=slaves.j2 dest='{{HADOOP_CONFIG_HOME}}/slaves'  owner=hadoop group=hadoop
