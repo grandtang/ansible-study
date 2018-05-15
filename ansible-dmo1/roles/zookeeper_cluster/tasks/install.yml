@@ -14,7 +14,7 @@
   template: src=myid.j2 dest='{{zookeeper_datadir}}/mid'  owner=hadoop group=hadoop
 
 - name: set_up zookeeper ENV
-  template: src=hadoop.sh.j2 dest='{{ENV_FILE_DIR}}/hadoop.sh' owner=root group=root mode=0755
+  template: src=zookeeper.sh.j2 dest='{{ENV_FILE_DIR}}/zookeeper.sh' owner=root group=root mode=0755
   become: yes
   become_user: root
   become_method: sudo
