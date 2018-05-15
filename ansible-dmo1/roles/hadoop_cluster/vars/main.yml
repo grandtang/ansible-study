@@ -1,7 +1,7 @@
 JAVA_HOME: /opt/java/jdk1.8.0_151
 hadoop_gz_path: /data/hadoop-2.9.1.tar.gz
 hadoop_install_path: /data/hadoop
-hadoop_tmp_dir: '{{hadoop_install_path}}'/tmp
-dfs_namenode_name_dir: '{{hadoop_install_path}}'/matedata/name
+hadoop_tmp_dir: '{{hadoop_install_path}}/tmp'
+dfs_namenode_name_dir: '{{hadoop_install_path}}/matedata/name'
 dfs_replication: 2
-dfs_datanode_data_dir: '{{hadoop_install_path}}'/matedata/data
+dfs_datanode_data_dir: '{{hadoop_install_path}}/matedata/data'
