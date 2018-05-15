@@ -8,10 +8,10 @@
   unarchive: src='{{zookeeper_package_path}}' dest='{{zookeeper_install_path}}' owner=hadoop group=hadoop
 
 - name: copy zoo.cfg
-  copy: path=zoo.cfg.j2 dest='{{zookeeper_confdir}}/zoo.cfg'  owner=hadoop group=hadoop
+  copy: src=zoo.cfg.j2 dest='{{zookeeper_confdir}}/zoo.cfg'  owner=hadoop group=hadoop
 
 - name: copy myid
-  copy: path=zoo.cfg.j2 dest='{{zookeeper_confdir}}/zoo.cfg'  owner=hadoop group=hadoop
+  copy: src=zoo.cfg.j2 dest='{{zookeeper_confdir}}/zoo.cfg'  owner=hadoop group=hadoop
 
 - name: set_up zookeeper ENV
   template: src=hadoop.sh.j2 dest='{{ENV_FILE_DIR}}/hadoop.sh' owner=root group=root mode=0755
