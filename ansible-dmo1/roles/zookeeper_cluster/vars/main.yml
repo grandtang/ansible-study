@@ -3,3 +3,5 @@ zookeeper_install_path: /data/zookeeper
 zookeeper_home: '{{zookeeper_install_path}}/zookeeper-3.4.12'
 zookeeper_datadir: '{{zookeeper_install_path}}/data'
 zookeeper_confdir: '{{zookeeper_home}}/conf'
+ENV_FILE_DIR: /etc/profile.d/
+ENV_FILE: /etc/profile
