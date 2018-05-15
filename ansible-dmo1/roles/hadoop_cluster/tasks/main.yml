@@ -1,14 +1,14 @@
 # hadoop_cluster install
-- included: install.yml
+- include: install.yml
   tags:
     - install
 
 # hadoop_cluster startup
-- included: startup.yml
+- include: startup.yml
   tags:
     - startup
 
 # hadoop_cluster stop
-- included: stop.yml
+- include: stop.yml
   tags:
     - stop
