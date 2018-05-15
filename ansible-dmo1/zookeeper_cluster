@@ -1,4 +1,11 @@
 [zookeeper_cluster]
-slave-01 myid=1 server_01=slave-01
-slave-02 myid=2 server_02=slave-02
-slave-03 myid=3 server_03=slave-03
+slave-01 myid=1 
+slave-02 myid=2 
+slave-03 myid=3
+[zookeeper_cluster:vars]
+server_01=slave-01
+server_02=slave-02
+server_03=slave-03
+server_myid_1=1
+server_myid_2=2
+server_myid_3=3
