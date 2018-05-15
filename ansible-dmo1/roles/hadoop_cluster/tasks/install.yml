@@ -32,3 +32,12 @@
   template: src=yarn-site.xml.j2 dest='{{HADOOP_CONFIG_HOME}}/yarn-site.xml'  owner=hadoop group=hadoop
 - name: copy etc
   template: src=slaves.j2 dest='{{HADOOP_CONFIG_HOME}}/slaves'  owner=hadoop group=hadoop
+
+- name: set_up JDK ENV
+  template: src=hadoop.sh.j2 dest='{{ENV_FILE_DIR}}/hadoop.sh' owner=root group=root mode=0755
+  become: yes
+  become_user: root
+  become_method: sudo
+
+- name: soure '{{ENV_FILE}}'
+  shell: source '{{ENV_FILE}}'

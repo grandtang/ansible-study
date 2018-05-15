@@ -7,3 +7,6 @@ dfs_replication: 2
 dfs_datanode_data_dir: '{{hadoop_install_path}}/matedata/data'
 HADOOP_HOME: '{{hadoop_install_path}}/hadoop-2.9.1'
 HADOOP_CONFIG_HOME: '{{HADOOP_HOME}}/etc/hadoop'
+
+ENV_FILE_DIR: /etc/profile.d/
+ENV_FILE: /etc/profile
