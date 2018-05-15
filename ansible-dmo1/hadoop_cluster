@@ -1,0 +1,11 @@
+[master_server]
+master
+[slaves_server]
+slave-0[1:2]
+[hadoop_cluster:children]
+master_server
+
+[hadoop_cluster:vars]
+slave_01=slave-01
+slave_02=slave-02
+master=master

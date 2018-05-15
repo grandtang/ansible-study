@@ -1,0 +1,21 @@
+- name: closed fire-wall
+  command: systemctl stop firewalld
+  become: yes
+  become_user: root
+  become_method: sudo
+
+
+- name: mkdir directory
+  file: path='{{hadoop_install_path}}' state=directory mode=0755  owner=hadoop group=hadoop
+
+- name: mkdir directory
+  file: path='{{hadoop_tmp_dir}}' state=directory mode=0755  owner=hadoop group=hadoop
+
+- name: mkdir directory
+  file: path='{{dfs_namenode_name_dir}}' state=directory mode=0755  owner=hadoop group=hadoop
+
+- name: mkdir directory
+  file: path='{{dfs_datanode_data_dir}}' state=directory mode=0755  owner=hadoop group=hadoop
+
+- name: unarchive hadoop
+  unarchive: src='{{hadoop_gz_path}}' dest='{{hadoop_install_path}}' owner=hadoop group=hadoop
