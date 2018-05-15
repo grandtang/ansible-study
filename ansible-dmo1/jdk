@@ -1,7 +1,8 @@
 [master_server]
 master
+master-01
 [slaves_server]
-slave-0[1:2]
+slave-0[1:3]
 [jdk_server:children]
 master_server
 slaves_server
