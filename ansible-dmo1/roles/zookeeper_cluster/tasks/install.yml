@@ -1,3 +1,6 @@
+- name: dele '{{zookeeper_install_path}}'
+  file: path='{{zookeeper_install_path}}' state=absent
+
 - name: mkdir '{{zookeeper_install_path}}'
   file: path='{{zookeeper_install_path}}' state=directory mode=0755  owner=hadoop group=hadoop
 
