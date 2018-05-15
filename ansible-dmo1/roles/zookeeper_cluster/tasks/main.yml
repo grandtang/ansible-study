@@ -1,13 +1,13 @@
-- inclued: install.yml
+- include: install.yml
   tags:
     - install
 
 
-- inclued: start.yml
+- include: start.yml
   tags:
     - start
 
 
-- inclued: stop.yml
+- include: stop.yml
   tags:
     - stop
