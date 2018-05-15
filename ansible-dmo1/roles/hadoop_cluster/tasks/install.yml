@@ -19,3 +19,16 @@
 
 - name: unarchive hadoop
   unarchive: src='{{hadoop_gz_path}}' dest='{{hadoop_install_path}}' owner=hadoop group=hadoop
+
+- name: copy etc
+  template: src=core-site.xml.j2 dest='{{HADOOP_CONFIG_HOME}}/core-site.xml'  owner=hadoop group=hadoop
+- name: copy etc
+  template: src=hadoop-env.sh.j2 dest='{{HADOOP_CONFIG_HOME}}/hadoop-env.sh'  owner=hadoop group=hadoop
+- name: copy etc
+  template: src=hdfs-site.xml.j2 dest='{{HADOOP_CONFIG_HOME}}/hdfs-site.xml'  owner=hadoop group=hadoop
+- name: copy etc
+  template: src=mapred-site.xml.j2 dest='{{HADOOP_CONFIG_HOME}}/mapred-site.xml'  owner=hadoop group=hadoop
+- name: copy etc
+  template: src=yarn-site.xml.j2 dest='{{HADOOP_CONFIG_HOME}}/yarn-site.xml'  owner=hadoop group=hadoop
+- name: copy etc
+  template: slaves.j2 dest='{{HADOOP_CONFIG_HOME}}/slaves-site.xml'  owner=hadoop group=hadoop
