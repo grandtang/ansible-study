@@ -20,7 +20,8 @@
        将 /etc/profile.d/jvm.sh 文件copy到各个服务器上
     4，在各个服务器上执行 source /etc/profile
  ```
- &nbsp;&nbsp;步骤二：安装hadoop（hadoop用户）
+ 
+ &nbsp;&nbsp;步骤二：用户设置
  ```
     1，创建hadoop用户（root用户）
        useradd -m hadoop
@@ -31,13 +32,17 @@
     3，创建/data目录并且修改/data目录的组为bigdata（root用户）
        mkdir /data
        chgrp bigdata -R /data
-    4，解压hadoop包到/data/hadoop目录中（hadoop用户）
+```
+ &nbsp;&nbsp;步骤三：安装hadoop（hadoop用户）
+ ```
+    
+    1，解压hadoop包到/data/hadoop目录中（hadoop用户）
        mkdir /data/hadoop
        tar -zxvf hadoop-2.9.1.tar.gz -C /data/hadoop
-    5，修改hadoop-env配置文件（/data/hadoop/hadoop-2.9.1/etc/hadoop/hadoop-env.sh）
+    2，修改hadoop-env配置文件（/data/hadoop/hadoop-2.9.1/etc/hadoop/hadoop-env.sh）
        修改变量 hadoop-env中的变量JAVA_HOME的值如下
        export JAVA_HOME=/opt/java/jdk1.8.0_
-    6，修改core-site配置文件（/data/hadoop/hadoop-2.9.1/etc/hadoop/core-site.xml）如下
+    3，修改core-site配置文件（/data/hadoop/hadoop-2.9.1/etc/hadoop/core-site.xml）如下
        <configuration>
            <!-- 指定HDFS老大（namenode）的通信地址 -->
            <property>
@@ -52,7 +57,7 @@
        
        </configuration>
        
-    7，修改hdfs-site配置文件（/data/hadoop/hadoop-2.9.1/etc/hadoop/hdfs-site.xml）如下
+    4，修改hdfs-site配置文件（/data/hadoop/hadoop-2.9.1/etc/hadoop/hdfs-site.xml）如下
         <configuration>
         
             <!-- 设置namenode的http通讯地址 -->
@@ -90,7 +95,7 @@
             </property>
         </configuration>
     
-    8，修改mapred-site配置文件（/data/hadoop/hadoop-2.9.1/etc/hadoop/mapred-site.xml）如下
+    5，修改mapred-site配置文件（/data/hadoop/hadoop-2.9.1/etc/hadoop/mapred-site.xml）如下
        <configuration>
            <!-- 通知框架MR使用YARN -->
            <property>
@@ -140,7 +145,7 @@
            </property>  
        </configuration>
     
-    9，修改yarn-site配置文件（/data/hadoop/hadoop-2.9.1/etc/hadoop/yarn-site.xml）如下
+    6，修改yarn-site配置文件（/data/hadoop/hadoop-2.9.1/etc/hadoop/yarn-site.xml）如下
         <configuration>
             <!-- 设置 resourcemanager 在哪个节点-->
             <property>
@@ -174,13 +179,45 @@
              <value>{{master}}:18141</value>
            </property>
         </configuration>
-    10，配置环境变量
+    7，配置环境变量
+    
         创建 /etc/profile.d/hadoop.sh 文件
         并且写入如下内容
         export HADOOP_HOME=/data/hadoop/hadoop-2.9.1/
         export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
-    11，copy /data/hadoop/hadoop-2.9.1/到各个服务器上
+        
+    8，copy /data/hadoop/hadoop-2.9.1/到各个服务器上
         copy /etc/profile.d/hadoop.sh 到各个服务器上
-    12，在master
-     
+        
+    9，在 master 执行 hdfs  namenode -format 格式化namespace
+        执行 start-dfs.sh 启动hadoop
+        执行 start-yarn.sh 启动yarn    
+        
+        启动history-server（mapred-site.xml 配置文件中配置的是master节点,所以在master节点上启动）
+        Hadoop启动jobhistoryserver来实现web查看作业的历史运行情况，由于在启动hdfs和Yarn进程之后，jobhistoryserver进程并没有启动，需要手动启动，
+        启动的方法是通过(注意：必须是两个命令)：
+        ./mr-jobhistory-daemon.sh start historyserver
+        ./yarn-daemon.sh start timelineserver 
+        
+        
+```
+&nbsp;&nbsp;步骤四： 测试hadoop
+
+```
+查看集群状态
+
+/data/hadoop-2.7.1/bin/hdfs dfsadmin -report
+
+测试yarn
+http://master:18088
+
+测试hdfs
+http://master:50070
+
+如有疑问 
+ 参考 
+  ansible-playbooks -i jdk ../playbooks/jdk.yml --tags=jdksetup
+  ansible-playbooks -i hadoop_cluster ../playbooks/hadoop_cluster.yml --tags=install
+
+
 ```
