@@ -1,4 +1,4 @@
-JAVA_HOME: /opt/java/jdk1.8.0_151
+JAVA_HOME: /opt/java/jdk1.8.0_171
 hadoop_gz_path: /data/hadoop-2.9.1.tar.gz
 hadoop_install_path: /data/hadoop
 hadoop_tmp_dir: '{{hadoop_install_path}}/tmp'
