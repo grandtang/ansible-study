@@ -2,7 +2,7 @@
   remote_user: hadoop
   tasks:
     - name: format hdfs
-      command: hdfs namenode -format
+      command: hdfs namenode -format -nonInteractive
 
     - name: copyt /tmp to {{master_server_01}} hdfs
       command: scp -r '{{tmp_home}}/tmp'  '{{master_server_01}}:{{tmp_home}}'
