@@ -15,8 +15,8 @@
         <entry file="file://$PROJECT_DIR$/README.MD">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="350">
-                <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="70" />
+              <first_editor relative-caret-position="856">
+                <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="82" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -24,11 +24,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hadoop_ha_format.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hadoop_ha_start_master_daemon.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/playbooks/hadoop_ha_start_master_daemon.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hadoop_ha_historyserver_stop.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/playbooks/hadoop_ha_historyserver_stop.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hadoop_ha_format.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/playbooks/hadoop_ha_format.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="88">
-              <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+              <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -54,7 +74,6 @@
         <option value="$PROJECT_DIR$/roles/hadoop_cluster_ha/templates/core-site.xml.j2" />
         <option value="$PROJECT_DIR$/hadoop安装说明.md" />
         <option value="$PROJECT_DIR$/playbooks/hadoop_cluster_ha.yml" />
-        <option value="$PROJECT_DIR$/playbooks/hadoop_ha_start_master_daemon.yml" />
         <option value="$PROJECT_DIR$/playbooks/hadoop_ha_quorum_active_master.yml" />
         <option value="$PROJECT_DIR$/playbooks/hadoop_ha_start.yml" />
         <option value="$PROJECT_DIR$/hadoop_ha安装说明.md" />
@@ -62,10 +81,11 @@
         <option value="$PROJECT_DIR$/playbooks/hadoop_ha_historyserver_start.yml" />
         <option value="$PROJECT_DIR$/roles/hadoop_cluster_ha/tasks/main.yml" />
         <option value="$PROJECT_DIR$/playbooks/hadoop_ha_stop.yml" />
-        <option value="$PROJECT_DIR$/playbooks/hadoop_ha_historyserver_stop.yml" />
         <option value="$PROJECT_DIR$/playbooks/hadoop_ha_stop_master_daemon.yml" />
         <option value="$PROJECT_DIR$/README.MD" />
         <option value="$PROJECT_DIR$/playbooks/hadoop_ha_format.yml" />
+        <option value="$PROJECT_DIR$/playbooks/hadoop_ha_start_master_daemon.yml" />
+        <option value="$PROJECT_DIR$/playbooks/hadoop_ha_historyserver_stop.yml" />
       </list>
     </option>
   </component>
@@ -499,12 +519,12 @@
       <option name="presentableId" value="Default" />
       <updated>1526266318158</updated>
       <workItem from="1526266320002" duration="317000" />
-      <workItem from="1526373684284" duration="17169000" />
+      <workItem from="1526373684284" duration="18007000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17486000" />
+    <option name="totallyTimeSpent" value="18324000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -870,14 +890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/playbooks/hadoop_ha_start_master_daemon.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/playbooks/hadoop_ha_journal_node.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -950,14 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/playbooks/hadoop_ha_historyserver_stop.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/roles/hadoop_cluster_ha/tasks/install.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-88">
@@ -982,21 +986,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/playbooks/hadoop_ha_format.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.MD">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="350">
-            <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="70" />
+          <first_editor relative-caret-position="856">
+            <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="82" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/playbooks/hadoop_ha_format.yml">
+    <entry file="file://$PROJECT_DIR$/playbooks/hadoop_ha_start_master_daemon.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        <state relative-caret-position="132">
+          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playbooks/hadoop_ha_historyserver_stop.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
           <folding />
         </state>
       </provider>
