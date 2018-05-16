@@ -3,5 +3,5 @@
   tasks:
     - name: stop history server
       command: mr-jobhistory-daemon.sh start historyserver
-#    - name: stop history server
-#      command: yarn-daemon.sh start timelineserver
+    - name: stop history server
+      command: yarn-daemon.sh start timelineserver
