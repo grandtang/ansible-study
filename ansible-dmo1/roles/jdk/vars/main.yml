@@ -1,5 +1,5 @@
-JDK_VERSION: jdk1.8.0_151
+JDK_VERSION: jdk1.8.0_171
 JDK_SETUP_DIRECTORY: /opt/java
-JDK_TAR_PATH: /opt/jdk-8u151-linux-x64.tar.gz
+JDK_TAR_PATH: /opt/jdk-8u171-linux-x64.tar.gz
 ENV_FILE_DIR: /etc/profile.d/
 ENV_FILE: /etc/profile
