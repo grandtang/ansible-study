@@ -1,0 +1,5 @@
+- hosts: master_server
+  remote_user: hadoop
+  tasks:
+    - name: Quorum active master
+      command: hdfs haadmin -transitionToActive nn1 --forcemanual

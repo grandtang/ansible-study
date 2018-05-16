@@ -3,5 +3,9 @@
   tasks:
     - name: format hdfs
       command: hdfs namenode -format
+
+    - name: copyt /tmp to {{master_server_01}} hdfs
+      command: scp '{{tmp_home}}/tmp' -r '{{master_server_01}}:{{tmp_home}}'
+
     - name: format zkfc
       command: hdfs zkfc -formatZK

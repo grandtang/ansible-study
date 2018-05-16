@@ -3,12 +3,12 @@
   tags:
     - install
 
-# hadoop_cluster startup
-- include: start_jd.yml
-  tags:
-    - start_jd
-
-# hadoop_cluster stop
-- include: stop.yml
-  tags:
-    - stop
+## hadoop_cluster startup
+#- include: start_jd.yml
+#  tags:
+#    - start_jd
+#
+## hadoop_cluster stop
+#- include: stop.yml
+#  tags:
+#    - stop

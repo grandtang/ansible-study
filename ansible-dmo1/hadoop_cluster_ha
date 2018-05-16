@@ -1,7 +1,15 @@
 [master_server]
 master
+
+[master_server:vars]
+master_server_01=master-01
+tmp_home=/data/hadoop
+
 [master_server_01]
 master-01
+
+[master_server_01:vars]
+
 [slaves_server]
 slave-0[1:3]
 [hadoop_cluster:children]
@@ -23,3 +31,6 @@ zk_03=slave-03
 slave-0[1:3]
 [zk_server]
 slave-0[1:3]
+
+[history_server]
+slave-0[1:2]

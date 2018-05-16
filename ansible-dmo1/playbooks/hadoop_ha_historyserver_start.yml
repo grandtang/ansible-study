@@ -1,0 +1,7 @@
+- hosts: history_server
+  remote_user: hadoop
+  tasks:
+    - name: start history server
+      command: mr-jobhistory-daemon.sh start historyserver
+    - name: start history server
+      command: yarn-daemon.sh start timelineserver

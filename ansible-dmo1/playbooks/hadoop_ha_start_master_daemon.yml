@@ -1,0 +1,7 @@
+- hosts: master_server_01
+  remote_user: hadoop
+  tasks:
+    - name: start resourcemanager
+      command: yarn-daemon.sh start resourcemanager
+    - name: start namenode
+      command: hadoop-daemon.sh start namenode
