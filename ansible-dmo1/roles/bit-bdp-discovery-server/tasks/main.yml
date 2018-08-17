@@ -1,0 +1,7 @@
+- name: Install discovery server {{ package_path }}/{{package_name}}
+  debug: msg=" discovery server Install Path is {{ install_path }}"
+
+- include: install.yml
+  tags:
+    - install
+

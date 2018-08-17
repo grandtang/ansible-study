@@ -1,0 +1,24 @@
+server:
+  port: {{bind_port}}
+eureka:
+  datacenter: bdp
+  environment: dev
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://{{ansible_wlp5s0['ipv4']['address']}}:{{bind_port}}/eureka
+    register-with-eureka: true #关闭自己作为客户端注册
+    fetch-registry: false
+  instance:
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+    prefer-ip-address: true
+  server:
+    enable-self-preservation: false # 关闭非高可用情况下的自我保护
+    eviction-interval-timer-in-ms: 10000 #清理间隔（单位毫秒，默认是60*1000）
+spring:
+  application:
+    name: eureka-client
+logging:
+  config: classpath: logback-spring.xml
+

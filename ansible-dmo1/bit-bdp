@@ -1,0 +1,4 @@
+# FOR BIT_BDP DEPLOY
+
+[BIT_BDP_DISCOVERY_SERVER]
+localhost  bind_port=8001 install_user=tangzy interface=ansible_wlp5s0

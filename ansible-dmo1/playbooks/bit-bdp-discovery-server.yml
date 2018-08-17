@@ -1,0 +1,4 @@
+- hosts: BIT_BDP_DISCOVERY_SERVER
+  remote_user: '{{install_user}}'
+  roles:
+     - bit-bdp-discovery-server

@@ -1,0 +1,16 @@
+
+
+### jar name
+package_name: discovery.jar
+
+### jar jar包位置
+package_path: /home/tangzy/jar/discovery
+
+### 部署位置
+install_path: /home/tangzy/install/discovery/{{bind_port}}
+
+### 临时目录位置
+tmp_path: /tmp/{{bind_port}}
+
+### log位置
+discovery_log_file: /tmp/discovery/logs/discovery.log
